@@ -41,6 +41,7 @@ def add_task():
     new_row = Table(task=new_task, deadline=datetime.strptime('08-05-2020', '%m-%d-%Y').date())
     session.add(new_row)
     session.commit()
+    print('The task has been added!')
 
     menu()
 
