@@ -71,7 +71,8 @@ def total_tasks():
     list_tasks = session.query(Table.task, Table.deadline).order_by(Table.deadline).all()
     print('All tasks:')
     for every_task in range(len(list_tasks)):
-        print(f'{every_task + 1}. {list_tasks[every_task][0]}. {list_tasks[every_task][1].strftime("%d %b")}')
+        print(f'{every_task + 1}. {list_tasks[every_task][0]}. '
+              f'{list_tasks[every_task][1].strftime("%d %b").lstrip("0")}')
     print()
     menu()
 
